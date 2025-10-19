@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import Navbar from './sections/Navbar'
+import HeroSection from './sections/HeroSection'
+import AboutSection from './sections/AboutSection'
+import SkillsSection from './sections/SkillsSection'
+import ProjectsSection from './sections/ProjectsSection'
+import ContactSection from './sections/ContactSection'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState('dark')
+
+  const themeLabel = useMemo(
+    () => (theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'),
+    [theme],
+  )
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+  }
+
+  useEffect(() => {
+    document.body.dataset.theme = theme
+  }, [theme])
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className={`app ${theme}`}>
+      <Navbar
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        themeLabel={themeLabel}
+      />
+
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection/>
+        <ContactSection />
+      </main>
+    </div>
   )
 }
 
