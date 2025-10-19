@@ -1,16 +1,63 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio site built with **React** and **Vite**. This project showcases the site owner, experience, and selected projects with image previews and links for further exploration.
 
-Currently, two official plugins are available:
+## ✨ Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Hero section and navigation with light/dark mode support.
+- Projects section with interactive cards showing preview images above descriptions.
+- Contact form and call-to-action areas to make it easy to get in touch.
+- Custom styling using a combination of Tailwind base and modular CSS.
 
-## React Compiler
+## 🗂️ Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+portfolio-website/
+├── public/                # Static public assets
+├── src/
+│   ├── assets/            # Images, icons, and project media
+│   ├── components/        # Reusable UI components
+│   ├── sections/          # Page sections (Hero, Projects, Contact, etc.)
+│   └── App.jsx, App.css   # Root component and global styles
+├── package.json           # Dependencies and npm scripts
+└── vite.config.js         # Vite configuration
+```
 
-## Expanding the ESLint configuration
+## 🚀 Running Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+2. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The dev server runs at `http://localhost:5173` by default.
+3. **Build for production**
+   ```bash
+   npm run build
+   ```
+4. **Preview the production build**
+   ```bash
+   npm run preview
+   ```
+
+## 🖼️ Adding or Updating Projects
+
+Project data lives in `src/sections/ProjectsSection.jsx`. Each entry can be updated with:
+
+- `title`: Project name.
+- `description`: Short summary.
+- `image`: Import a local asset from `src/assets/projects/` or use a public URL.
+- `href`: Link to the repository or demo.
+
+Add new visual assets to `src/assets/projects/` and import them in the projects file so previews display above descriptions.
+
+## 🧪 Quality Check
+
+Before deploying, run a build to make sure there are no errors:
+
+```bash
+npm run build
+```

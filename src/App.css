@@ -263,7 +263,7 @@ main {
 .hero-portrait img {
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
@@ -376,6 +376,14 @@ main {
   margin: 0;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
 
 .project-link {
