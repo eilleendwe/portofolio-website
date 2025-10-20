@@ -283,6 +283,92 @@ main {
   z-index: -1;
 }
 
+/* coder illustration and typing animation */
+.coder-illustration {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+}
+
+.coder-illustration svg {
+  width: 88%;
+  height: auto;
+  border-radius: 18px;
+}
+
+.coder-code {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    monospace;
+  font-size: 0.9rem;
+}
+
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2.6s steps(7) 1s infinite alternate, 0.7s step-end infinite;
+}
+
+.cursor {
+  margin-left: 0.25rem;
+  opacity: 1;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    max-width: 0ch;
+  }
+  50% {
+    max-width: 34ch;
+  }
+  100% {
+    max-width: 34ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* animate the lines on the laptop screen to look like active code */
+.screen-line {
+  opacity: 0.45;
+  transform-origin: left center;
+  animation: screenPulse 1.8s ease-in-out infinite;
+}
+.screen-line.s1 {
+  animation-delay: 0s;
+}
+.screen-line.s2 {
+  animation-delay: 0.2s;
+}
+.screen-line.s3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes screenPulse {
+  0% {
+    opacity: 0.2;
+    transform: translateX(-4px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateX(-4px);
+  }
+}
+
 .about-grid {
   margin-top: 2.5rem;
   display: grid;

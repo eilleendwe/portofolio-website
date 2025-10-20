@@ -1,15 +1,20 @@
 import React from "react";
-import image from "../assets/eilleen-potrait.jpg";
+import image from "../assets/hero-photo.png";
 
 const HeroSection = () => {
   return (
     <section id="home" className="section hero">
       <div className="hero-content">
         <p className="intro">Hi, I&apos;m</p>
-        <h1 className="hero-title">Eilleen</h1>
+
+        <code>
+          <span className="typing">
+            <h1 className="hero-title">Eilleen</h1>
+          </span>
+        </code>
         <div className="hero-tagline">
-          <p>Design. Code. Innovate.</p>
           <p>Just a curious developer building things that matter.</p>
+          <p>Design. Code. Innovate.</p>
         </div>
         <div className="hero-actions">
           <a className="primary-cta" href="#projects">
@@ -22,7 +27,13 @@ const HeroSection = () => {
       </div>
       <div className="hero-portrait">
         <div className="glow" aria-hidden="true" />
-        <img src={image} alt="Eilleen" loading="lazy" />
+        <img src={image} alt="Eilleen" className="hero-photo" loading="lazy" />
+        <div className="coder-code" aria-hidden="true">
+          <code>
+            <span className="typing">console.log('Hello World');</span>
+            <span className="cursor">▌</span>
+          </code>
+        </div>
       </div>
     </section>
   );
