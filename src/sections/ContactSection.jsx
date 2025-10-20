@@ -22,6 +22,15 @@ const ContanctSection = () => {
             className="contact-link"
           >
             LinkedIn
+          </a>{" "}
+          and my{"\u00A0"}
+          <a
+            href="https://github.com/eilleendwe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+          >
+            GitHub
           </a>
           .
         </p>
